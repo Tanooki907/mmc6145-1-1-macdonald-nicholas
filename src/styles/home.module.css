@@ -1,3 +1,13 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.rocket {
+  text-align: center;
+}
+
 .placeholder {
   font-size: 4rem;
+  text-align: center;
 }

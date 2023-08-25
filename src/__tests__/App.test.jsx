@@ -1,6 +1,7 @@
 import {vi} from 'vitest'
 import App from '../App'
 import {renderAtURL} from './setup'
+import { act } from 'react-dom/test-utils'
 
 describe('app', () => {
   describe('header component', () => {
@@ -12,6 +13,7 @@ describe('app', () => {
       const {default: Header} = await import('../components/header')
       expect(Header).toBeDefined()
       const {container} = renderAtURL(<Header />, "/")
+      await act(() => new Promise(r => setTimeout(r, 0)))
       expect(container.querySelector('header')).not.toBeNull()
     })
     for (const location of ["/", "/about", "/contact"]) {
